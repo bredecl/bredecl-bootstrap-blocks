@@ -1,3 +1,5 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 /*!
  * Bootstrap Grid v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -10,6 +12,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -10578,6 +10581,90 @@ a.text-dark:hover, a.text-dark:focus {
 /*
  * Advanced Bootstrap Blocks
  */
+[data-type^="bredecl-bootstrap-blocks/accordion"] {
+  max-width: 100%;
+  margin-left: initial;
+  margin-right: initial;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: initial;
+  padding-right: initial;
+  border: 1px dashed #FF5733;
+  padding: 10px;
+  width: auto; }
+  [data-type^="bredecl-bootstrap-blocks/accordion"] .block-list-appender {
+    margin: 0 !important; }
+
+[data-type^="bredecl-bootstrap-blocks/list"] {
+  max-width: 100%;
+  margin-left: initial;
+  margin-right: initial;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: initial;
+  padding-right: initial;
+  border: 1px dashed #6C3483;
+  padding: 10px;
+  width: auto; }
+  [data-type^="bredecl-bootstrap-blocks/list"] .block-list-appender {
+    margin: 0 !important; }
+
+[data-type^="bredecl-bootstrap-blocks/list-item"] {
+  max-width: 100%;
+  margin-left: initial;
+  margin-right: initial;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: initial;
+  padding-right: initial;
+  border: 1px dashed #2471A3;
+  padding: 10px;
+  width: auto; }
+  [data-type^="bredecl-bootstrap-blocks/list-item"] .block-list-appender {
+    margin: 0 !important; }
+
+[data-type^="bredecl-bootstrap-blocks/accordion-header"] {
+  max-width: 100%;
+  margin-left: initial;
+  margin-right: initial;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: initial;
+  padding-right: initial;
+  border: 1px dashed #FFC300;
+  padding: 10px;
+  width: auto; }
+  [data-type^="bredecl-bootstrap-blocks/accordion-header"] .block-list-appender {
+    margin: 0 !important; }
+
+[data-type^="bredecl-bootstrap-blocks/div"] {
+  max-width: 100%;
+  margin-left: initial;
+  margin-right: initial;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: initial;
+  padding-right: initial;
+  border: 1px dashed peru;
+  padding: 10px;
+  width: auto; }
+  [data-type^="bredecl-bootstrap-blocks/div"] .block-list-appender {
+    margin: 0 !important; }
+
+[data-type^="bredecl-bootstrap-blocks/card-image-overlay"] {
+  max-width: 100%;
+  margin-left: initial;
+  margin-right: initial;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: initial;
+  padding-right: initial;
+  border: 1px dashed purple;
+  padding: 10px;
+  width: auto; }
+  [data-type^="bredecl-bootstrap-blocks/card-image-overlay"] .block-list-appender {
+    margin: 0 !important; }
+
 [data-type^="bredecl-bootstrap-blocks/"].wp-block {
   max-width: 100%;
   margin-left: initial;

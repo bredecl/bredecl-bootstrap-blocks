@@ -15,32 +15,32 @@ export const CustomClassNameInspector = createHigherOrderComponent( ( BlockEdit 
       return (
         <Fragment>
           <BlockEdit { ...props } />
-          <InspectorControls>     
+          <InspectorControls>
             <PanelBody
               title={ __( 'Bootstrap Classes', 'bredecl-bootstrap-blocks' ) }
               initialOpen={false}
               >
               {
-                props.attributes.className && 
+                props.attributes.className &&
                   <PanelRow title="Active Classes" className="my-0 flex-wrap justify-content-start">
-                    
+
                   {
                     props.attributes.className
                     .split(" ")
                     .filter(item => item.trim() != '')
                     .map((item, index) => {
                       return (
-                          <button 
+                          <button
                             key={index}
                             className="d-inline badge badge-primary border-0 font-weight-light mb-2 mr-2"
                             onClick={() =>  {
-                                const classNameList = typeof props.attributes.className !== "undefined" ? props.attributes.className.split(" ") : []; 
+                                const classNameList = typeof props.attributes.className !== "undefined" ? props.attributes.className.split(" ") : [];
                                 if (classNameList.includes(item)) {
-                                  props.setAttributes( { 
+                                  props.setAttributes( {
                                     className: classNameList.filter(name => name !== item).join(" ")
                                   } );
                                 }
-                              } 
+                              }
                             }
                           >
                             {item} <i className="fa fa-close" aria-hidden="true"></i>
@@ -51,7 +51,7 @@ export const CustomClassNameInspector = createHigherOrderComponent( ( BlockEdit 
                   </PanelRow>
               }
               <PanelRow>
-                <input 
+                <input
                   id="classNameFilter"
                   type="text"
                   placeholder="Filter class names"
@@ -59,7 +59,7 @@ export const CustomClassNameInspector = createHigherOrderComponent( ( BlockEdit 
                   onChange={e => props.setAttributes({ classNameFilter: e.target.value.replace(".", "") }) }
                 />
               </PanelRow>
-              
+
               {
                 customClassNames
                   .filter(item => item.className.indexOf(props.attributes.classNameFilter) != -1 ? true : false )
@@ -68,24 +68,24 @@ export const CustomClassNameInspector = createHigherOrderComponent( ( BlockEdit 
                       <PanelRow className="mt-0" key={index}>
                         <label
                         >
-                          <input 
-                            type="checkbox" 
+                          <input
+                            type="checkbox"
                             checked={
-                              typeof props.attributes.className !== "undefined" && 
+                              typeof props.attributes.className !== "undefined" &&
                               props.attributes.className.split(" ").indexOf(item.className) != -1 ? true : false
                             }
                             onClick={() =>  {
-                                const classNameList = typeof props.attributes.className !== "undefined" ? props.attributes.className.split(" ") : []; 
+                                const classNameList = typeof props.attributes.className !== "undefined" ? props.attributes.className.split(" ") : [];
                                 if (!classNameList.includes(item.className)) {
-                                  props.setAttributes( { 
-                                    className: [classNameList.join(" "), item.className].join(" ") 
+                                  props.setAttributes( {
+                                    className: [classNameList.join(" "), item.className].join(" ")
                                   } );
                                 } else {
-                                  props.setAttributes( { 
+                                  props.setAttributes( {
                                     className: classNameList.filter(name => name !== item.className).join(" ")
                                   } );
                                 }
-                              } 
+                              }
                             }
                           />
                           <small>{item.className}</small>
@@ -100,7 +100,7 @@ export const CustomClassNameInspector = createHigherOrderComponent( ( BlockEdit 
         </Fragment>
       );
     } else {
-      return <BlockEdit { ...props } />; 
+      return <BlockEdit { ...props } />;
     }
 	};
 }, 'CustomClassNameInspector' );

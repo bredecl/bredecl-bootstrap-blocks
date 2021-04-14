@@ -5,12 +5,24 @@ import './column';
 import './button';
 import './buttonGroup';
 import './card';
-import './cardImage';
+
 import './cardImageOverlay';
+import './cardImageOverlayContent';
+import './cardImageOverlayHeader';
+
+//import './cardImageOverlay';
 import './cardHeader';
 import './cardBody';
 import './cardFooter';
-// import './accordion';
+import './div';
+import './accordion';
+import './accordionItem';
+import './accordionHeader';
+import './accordionCollapse';
+import './link';
+import './list';
+import './listItem';
+import './fontawesome';
 // import './collapse';
 import './jumbotron';
 

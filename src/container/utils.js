@@ -1,9 +1,9 @@
-const { 
-  createHigherOrderComponent 
+const {
+  createHigherOrderComponent
 } = wp.compose;
 
-const { 
-  getBlockDefaultClassName 
+const {
+  getBlockDefaultClassName
 } = wp.blocks;
 
 const defaultClassName = getBlockDefaultClassName("bredecl-bootstrap-blocks/container");
@@ -23,16 +23,16 @@ export const setBlockAttributes = ( attributes ) => {
 export const modifyBlockListBlockContainer = createHigherOrderComponent( ( BlockListBlock ) => {
   return ( props ) => {
     if (props.block.name == "bredecl-bootstrap-blocks/container") {
-      const isDropTarget = typeof props.className !== "undefined" ? !props.className.indexOf('is-drop-target') : false; 
-      return (
-        <BlockListBlock 
-          { ...props } 
+      const isDropTarget = typeof props.className !== "undefined" ? !props.className.indexOf('is-drop-target') : false;
+      return ( 
+        <BlockListBlock
+          { ...props }
           className={ props.attributes.isWrapped ? props.attributes.className : isDropTarget ? "is-drop-target" : null }
         />
       );
     }
     return <BlockListBlock { ...props } />;
-  }; 
+  };
 }, 'modifyBlockListBlockContainer' );
 
 export const modifyGetSaveElementContainer = (element, blockType, attributes ) => {
@@ -42,7 +42,7 @@ export const modifyGetSaveElementContainer = (element, blockType, attributes ) =
   if (blockType.name === 'bredecl-bootstrap-blocks/container') {
     if (attributes.isWrapped) {
       return (
-        <div 
+        <div
           {...attributes.anchor ? { id: attributes.anchor } : { } }
           className={element.props.className}
           { // conditionally render style attribute with backgroundImage property
@@ -64,7 +64,7 @@ export const modifyGetSaveElementContainer = (element, blockType, attributes ) =
       )
     }
     return (
-      <div 
+      <div
         {...attributes.anchor ? { id: attributes.anchor } : { } }
         className={ [(attributes.isFluid ? "container-fluid" : "container"), element.props.className].join(" ").trim() }
         { // conditionally render style attribute with backgroundImage property

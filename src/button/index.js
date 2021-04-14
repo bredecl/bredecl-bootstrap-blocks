@@ -1,16 +1,16 @@
 const { __ } = wp.i18n;
 
-const { 
-  registerBlockType 
+const {
+  registerBlockType
 } = wp.blocks;
 
-import { edit } from './edit'; 
-import { save } from './save'; 
+import { edit } from './edit';
+import { save } from './save';
 import {
   setBlockCustomClassName
-} from './utils'; 
+} from './utils';
 
-import icon from '../core/icon-bootstrap.svg'; 
+import icon from '../core/icon-bootstrap.svg';
 
 const settings = {
   title: __( 'Button (BS4)', 'bredecl-bootstrap-blocks' ),
@@ -26,10 +26,14 @@ const settings = {
     anchor: true,
   },
   attributes: {
-    type: {
+    htmlType: {
       type: 'string',
-      default: 'default'
+      default: 'a'
     },
+      type: {
+        type: 'string',
+        default: 'default'
+      },
     style: {
       type: 'string',
       default: 'btn-primary'
@@ -58,13 +62,30 @@ const settings = {
       type: 'bool',
       default: false
     },
+    databstoggle: {
+      type: 'string',
+      default: ''
+    },
+    databstarget: {
+      type: 'string',
+      default: ''
+    },
+    ariaexpanded: {
+      type: 'string',
+      default: ''
+    },
+    ariacontrols: {
+      type: 'string',
+      default: ''
+    },
+
   },
   edit: edit,
   save: save
 }
 
 registerBlockType(
-  'bredecl-bootstrap-blocks/button', 
+  'bredecl-bootstrap-blocks/button',
   settings
 );
 

@@ -1,21 +1,21 @@
 const { __ } = wp.i18n;
 
-const { 
+const {
   registerBlockType,
 } = wp.blocks;
 
-import { edit } from './edit'; 
-import { save } from './save'; 
-import { 
+import { edit } from './edit';
+import { save } from './save';
+import {
   modifyBlockListBlockColumn,
   modifyGetSaveElementColumn,
   setBlockCustomClassName,
 } from './utils';
 
-import icon from '../core/icon-bootstrap.svg'; 
+import icon from '../core/icon-bootstrap.svg';
 
 registerBlockType('bredecl-bootstrap-blocks/column', {
-  title: __('Column (BS4)', 'bredecl-bootstrap-blocks'),
+  title: __('Column', 'bredecl-bootstrap-blocks'),
   description: __(''),
   icon: icon,
   category: 'bredecl-bootstrap-blocks',
@@ -38,14 +38,14 @@ registerBlockType('bredecl-bootstrap-blocks/column', {
 });
 
 wp.hooks.addFilter(
-  'editor.BlockListBlock', 
-  'bredecl-bootstrap-blocks/column/modify-element-edit', 
-  modifyBlockListBlockColumn 
+  'editor.BlockListBlock',
+  'bredecl-bootstrap-blocks/column/modify-element-edit',
+  modifyBlockListBlockColumn
 );
 
 wp.hooks.addFilter(
-  'blocks.getSaveElement', 
-  'bredecl-bootstrap-blocks/column/modify-element-save', 
+  'blocks.getSaveElement',
+  'bredecl-bootstrap-blocks/column/modify-element-save',
   modifyGetSaveElementColumn
 );
 

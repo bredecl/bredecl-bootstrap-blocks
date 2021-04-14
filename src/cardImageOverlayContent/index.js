@@ -8,15 +8,15 @@ const {
 import { edit } from './edit';
 import { save } from './save';
 import {
-  modifyBlockListBlockCardImageOverlay,
-  modifyGetSaveElementCardImageOverlay,
+  modifyBlockListBlockCardImageOverlayContent,
+  modifyGetSaveElementCardImageOverlayContent,
   setBlockCustomClassName,
 } from './utils';
 
 import icon from '../core/icon-bootstrap.svg';
 
 const settings = {
-  title: __( 'Card Image-Overlay', 'bredecl-bootstrap-blocks' ),
+  title: __( 'Card Image-Overlay Content', 'bredecl-bootstrap-blocks' ),
   description: __(''),
   icon: icon,
   category: 'bredecl-bootstrap-blocks',
@@ -29,10 +29,7 @@ const settings = {
     // allowedBlocks: ['bredecl-bootstrap-blocks/row'],
     TEMPLATE: {
       type: 'array',
-      default: [
-          
-          ['bredecl-bootstrap-blocks/card-image-overlay-header', {} ,[]],
-          ['bredecl-bootstrap-blocks/card-image-overlay-content', {} ,[]],
+      default: [ 
       ]
     }
   },
@@ -41,24 +38,24 @@ const settings = {
 }
 
 registerBlockType(
-  'bredecl-bootstrap-blocks/card-image-overlay',
+  'bredecl-bootstrap-blocks/card-image-overlay-content',
   settings
 );
 
 wp.hooks.addFilter(
   'editor.BlockListBlock',
-  'bredecl-bootstrap-blocks/card-image-overlay/modify-element-edit',
-  modifyBlockListBlockCardImageOverlay
+  'bredecl-bootstrap-blocks/card-image-overlay-content/modify-element-edit',
+  modifyBlockListBlockCardImageOverlayContent
 );
 
 wp.hooks.addFilter(
   'blocks.getSaveElement',
-  'bredecl-bootstrap-blocks/card-image-overlay/modify-element-save',
-  modifyGetSaveElementCardImageOverlay
+  'bredecl-bootstrap-blocks/card-image-overlay-content/modify-element-save',
+  modifyGetSaveElementCardImageOverlayContent
 );
 
 wp.hooks.addFilter(
 	'blocks.getBlockDefaultClassName',
-	'bredecl-bootstrap-blocks/card-image-overlay/set-block-custom-class-name',
+	'bredecl-bootstrap-blocks/card-image-overlay-content/set-block-custom-class-name',
 	setBlockCustomClassName
 );
